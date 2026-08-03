@@ -1,0 +1,180 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #14213d;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell[data-theme="day"] {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --text: #14213d;
+  --muted: #5a6782;
+  --accent: #1d4ed8;
+  --accent-2: #e0ebff;
+  --border: #dce4f2;
+}
+
+.app-shell[data-theme="night"] {
+  --bg: #07111f;
+  --panel: #111d31;
+  --text: #f7fafc;
+  --muted: #b7c3d7;
+  --accent: #60a5fa;
+  --accent-2: #15304f;
+  --border: #24354f;
+}
+
+.page-content {
+  flex: 1;
+  padding: 2rem 1.25rem 3rem;
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.header-bar,
+.footer-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+}
+
+.footer-bar {
+  position: relative;
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  margin-top: auto;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.nav-links,
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a,
+.footer-links a {
+  color: var(--muted);
+}
+
+.nav-links a.router-link-exact-active {
+  color: var(--accent);
+}
+
+.hero-section,
+.page-view,
+.testimonial-section {
+  padding: 1.25rem 0 1rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 0.2rem 0 0.8rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn.secondary {
+  background: var(--accent-2);
+  color: var(--text);
+}
+
+.carousel-card,
+.testimonial-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.carousel-controls button {
+  border: none;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+  background: var(--accent-2);
+  color: var(--text);
+}
+
+.info-list {
+  padding-left: 1rem;
+}
+
+@media (max-width: 700px) {
+  .header-bar,
+  .footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
