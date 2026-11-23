@@ -20,7 +20,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/FalconFinancialRescue-Site/'),
+  history: createWebHistory('/'),
   routes
 });
 
